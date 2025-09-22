@@ -21,5 +21,5 @@ RUN npm install express axios
 #Copy rest of source files
 COPY . .
 
-# CMD ["npm","run","devStart"]
-CMD ["node","app.js"]
+CMD ["npm","run","devStart"]
+# CMD ["node","app.js"]
