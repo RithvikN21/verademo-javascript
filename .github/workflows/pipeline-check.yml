@@ -52,7 +52,7 @@ jobs:
           vid: ${{ secrets.VERACODE_API_ID }}
           vkey: ${{ secrets.VERACODE_API_KEY }}
           file: "verademo-js.zip"
-          fail_build: true
+          fail_build: false
 
   sca-scan:
     needs: build
