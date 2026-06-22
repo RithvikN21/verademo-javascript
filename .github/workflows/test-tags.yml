@@ -20,6 +20,7 @@ jobs:
       - name: Run Veracode Policy scan
         uses: RithvikN21/uploadandscan-action@add-tags-input
         with:
+          version: '${{ github.run_number }}'
           appname: 'rithvik-tags-test-1'
           createprofile: true
           tags: 'env:test,owner:rithvik'
