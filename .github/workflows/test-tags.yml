@@ -24,7 +24,7 @@ jobs:
           version: '${{ github.run_number }}'
           appname: 'rithvik-tags-test-1'
           createprofile: true
-          tags: 'env:test,owner:rithvik'
+          tags: 'tag:test,owner:rithvik'
           filepath: 'verademo.zip'
           scantimeout: 30
           vid: '${{ secrets.VERACODE_API_ID }}'
