@@ -22,7 +22,7 @@ jobs:
         with:
           teams: 'coop-2026'
           version: '${{ github.run_number }}'
-          appname: 'rithvik-tags-test-1'
+          appname: 'rithvik-tags-test'
           createprofile: true
           tags: 'tag:test,owner:rithvik'
           filepath: 'verademo.zip'
