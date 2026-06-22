@@ -1,0 +1,29 @@
+name: Test Tags Feature
+on:
+  workflow_dispatch:
+jobs:
+  veracode-uploadandscan:
+    runs-on: ubuntu-latest
+    name: Veracode tags test
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: setup node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.3.0'
+      - name: Zip application files
+        run: |
+          rm -rf verademo.zip
+          zip -r verademo.zip resources/css/ resources/js/ routes/ src-app/ views/ \
+            app.js package.json package-lock.json
+      - name: Run Veracode Policy scan
+        uses: RithvikN21/uploadandscan-action@add-tags-input
+        with:
+          appname: 'rithvik-tags-test-1'
+          createprofile: true
+          tags: 'env:test,owner:rithvik'
+          filepath: 'verademo.zip'
+          scantimeout: 30
+          vid: '${{ secrets.VERACODE_API_ID }}'
+          vkey: '${{ secrets.VERACODE_API_KEY }}'
