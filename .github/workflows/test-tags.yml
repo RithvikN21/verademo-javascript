@@ -26,6 +26,5 @@ jobs:
           createprofile: true
           tags: 'tag:test,owner:rithvik'
           filepath: 'verademo.zip'
-          scantimeout: 30
           vid: '${{ secrets.VERACODE_API_ID }}'
           vkey: '${{ secrets.VERACODE_API_KEY }}'
